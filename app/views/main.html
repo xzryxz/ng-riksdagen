@@ -13,7 +13,19 @@
     <img src="images/yeoman.png" alt="I'm Yeoman"><br>
     Always a pleasure scaffolding your apps.
   </p>
-  <p><a class="btn btn-lg btn-success" ng-href="#" ng-click="fetch()">Splendid!</a></p>
+  <div class="btn-group">
+    <button type="button"
+      class="btn btn-success dropdown-toggle"
+      data-toggle="dropdown"
+      ng-disabled="fetching">
+      {{fetchurl || 'Fetch '}}<span class="caret"></span>
+    </button>
+    <ul class="dropdown-menu">
+      <li ng-repeat="source in jsonSources">
+        <a ng-href="#" ng-click="fetch(source.url)">{{source.name}}</a>
+      </li>
+    </ul>
+  </div>
 </div>
 
 <div class="row marketing">
