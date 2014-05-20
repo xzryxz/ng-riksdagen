@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('ngRiksdagenApp')
-  .directive('barChart', function($window, $timeout, D3) {
+  .directive('barChart', function($window, $timeout, d3) {
     return {
       restrict: 'A',
       scope: {
@@ -10,7 +10,7 @@ angular.module('ngRiksdagenApp')
         onClick: '&'
       },
       link: function(scope, ele, attrs) {
-        D3.d3().then(function(d3) {
+        d3.d3().then(function(d3) {
 
           var renderTimeout;
           var margin = parseInt(attrs.margin) || 20,

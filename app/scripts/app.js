@@ -5,7 +5,8 @@ angular.module('ngRiksdagenApp', [
   'ngResource',
   'ngSanitize',
   'ngRoute',
-  'ngGrid'
+  'ngGrid',
+  'd3'
 ])
   .config(function ($routeProvider) {
     $routeProvider
