@@ -1,12 +1,18 @@
 'use strict';
 
 angular.module('ngRiksdagenApp')
-  .controller('MainCtrl', function ($scope, $http, $log) {
+  .controller('MainCtrl', function ($scope, $http) {
 
     $scope.localJsonUrl = '/data.riksdagen.json';
     $scope.dataStr = 'Need to fetch something.';
     $scope.data = [];
-    
+
+    $scope.d3data = [
+      {name: 'Greg', score: 98},
+      {name: 'Ari', score: 96},
+      {name: 'Q', score: 75},
+      {name: 'Loser', score: 48}
+    ];
 
     $scope.gridData = [];
     $scope.gridOptions = { data : 'gridData' };
@@ -32,8 +38,8 @@ angular.module('ngRiksdagenApp')
         if (tbl.hasOwnProperty(row)) {
           $scope.gridData.push({
             Parti : row,
-            Ja : tbl[row]['Ja'],
-            Nej : tbl[row]['Nej']
+            Ja : tbl[row].Ja,
+            Nej : tbl[row].Nej
           });
         }
       }
@@ -59,11 +65,9 @@ angular.module('ngRiksdagenApp')
         url : sourceUrl
       }).success(function (data) {
           $scope.data.push(data);
-        }).error(function (data, status) {
+        }).error(function (data) {
           $scope.data.push(data);
-          //$log.error(status + ' Error fetching data.');
         }).then(function () {
-          //$log.info($scope.data);
           $scope.dataStr = JSON.stringify($scope.data);
           $scope.fetching = false;
         });
