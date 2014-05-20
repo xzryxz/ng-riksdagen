@@ -15,6 +15,6 @@ describe('Directive: barChart', function () {
   it('should make hidden element visible', inject(function ($compile) {
     element = angular.element('<bar-chart></bar-chart>');
     element = $compile(element)(scope);
-    expect(element.text()).toBe('this is the barChart directive');
+    expect(element.text()).toBe('This is the barChart directive');
   }));
 });
