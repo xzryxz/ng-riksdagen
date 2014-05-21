@@ -1,18 +1,18 @@
 'use strict';
 
-describe('Service: D3Service', function () {
+describe('Service: d3', function () {
 
   // load the service's module
   beforeEach(module('ngRiksdagenApp'));
 
   // instantiate service
-  var D3Service;
-  beforeEach(inject(function (_D3Service_) {
-    D3Service = _D3Service_;
+  var d3;
+  beforeEach(inject(function (_d3_) {
+    d3 = _d3_;
   }));
 
   it('should do something', function () {
-    expect(!!D3Service).toBe(true);
+    expect(!!d3).toBe(true);
   });
 
 });

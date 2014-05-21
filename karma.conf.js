@@ -19,7 +19,7 @@ module.exports = function(config) {
       'app/bower_components/angular-route/angular-route.js',
       'app/scripts/*.js',
       'app/scripts/**/*.js',
-      'test/mock/**/*.js',
+      // 'test/mock/**/*.js',
       'test/spec/**/*.js'
     ],
 
@@ -47,6 +47,11 @@ module.exports = function(config) {
     // - PhantomJS
     // - IE (only Windows)
     browsers: ['Chrome'],
+
+    plugins: [
+      'karma-chrome-launcher',
+      'karma-jasmine'
+    ],
 
 
     // Continuous Integration mode
